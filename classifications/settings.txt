@@ -1,0 +1,54 @@
+URLs: 
+testingWidthMin: 320
+testingWidthMax: 1400
+testingHeight: 1000
+repeat: 1
+run: Repair
+browserMode: Headless
+loadDirectory: /home/ibrahim/github/rr-code/saved-doms-headless-4ms
+excludeElementsWithDisplayValue: inline
+logXPaths: 
+logViewports: 
+logValuesDuringScreenCapture: false
+capturePCAlignments: true
+capturePCVerticalAlignments: false
+captureSiblingAlignments: true
+smallrangeThreshold: 5
+webpagesDirectory: /home/ibrahim/github/rr-code/subjects/all
+mainOutputFile: /home/ibrahim/github/rr-code/output
+runOutputFile: /home/ibrahim/github/rr-code/output/2021-04-29-17-42-13
+repairDelay: 0.4
+loadDelay: 0.4
+autoScrollDelay: 0.4
+scrollDelay: 0.4
+scrollPage: true
+maxAutoScroll: 25000
+tolerance: collision: 2
+tolerance: equivalentParent: 1
+tolerance: protrusion: 1
+tolerance: smallrange: 1
+tolerance: ignoreFractions: false
+rowThreshold: 2
+detectElementCollision: true
+detectElementProtrusion: true
+detectViewportProtrusion: true
+detectWrapping: true
+detectSmallrange: true
+repairConfirmUsing: DOM and RLG
+screenshotNarrower: false
+screenshotMin: true
+screenshotMid: false
+screenshotMax: false
+screenshotWider: true
+fullPageScreenshot: true
+screenshotFailingRepairs: true
+maxNumberOfCombinedRepairs: 3
+additionalRepairs: None
+aftermath: false
+NoScalingCSSProperties: 
+skipCopyingCSSProperties: 
+repairs: Transform-Wider,Transform-Narrower
+metaInformation: Repair all subjects
+humanStudy: false
+humanStudyClippedSnapshot: false
+repairCombination: Transform-Wider,Transform-Narrower
