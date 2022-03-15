@@ -1,0 +1,503 @@
+html {
+  box-sizing     : border-box;
+  scroll-behavior: smooth;
+  height         : 100%;
+  width          : 100%;
+  max-width      : 100%;
+  max-height     : 100%;
+  margin         : 0px !important;
+}
+
+body {
+  background-color: rgb(250, 250, 250);
+  padding         : 5px 5px;
+  height          : 100%;
+  width           : 100%;
+  max-width       : 100%;
+  max-height      : 100%;
+  text-align      : center;
+  margin          : 0px !important;
+}
+
+* {
+  font-size  : 25px;
+  box-sizing : border-box;
+  font-family: "Arial", "Play", sans-serif !important;
+}
+
+.loading {
+  font-size  : 35px;
+  position   : absolute;
+  left       : 5px;
+  bottom     : 5px;
+  z-index    : 99999999999;
+  display    : inline-block;
+  font-weight: bold;
+  animation  : fadeIn 1s infinite alternate;
+
+}
+
+
+.browserContainer {
+  width     : 100%;
+  text-align: center;
+}
+
+.left {
+  width        : 100%;
+  position     : fixed;
+  padding-right: 135px;
+  padding-left : 5px;
+  padding-top  : 5px;
+  z-index      : 1;
+  top          : 0;
+  left         : 0;
+  text-align   : center;
+}
+
+.topPageFrame {
+  width     : 100%;
+  padding   : 5px 5px;
+  text-align: center;
+}
+
+.bottomPageFrame {
+  width     : 100%;
+  text-align: center;
+}
+
+.right {
+  padding-top: 5px;
+  text-align : center;
+  width      : 130px;
+  position   : fixed;
+  z-index    : 1;
+  top        : 0;
+  right      : 0;
+}
+
+.popup {
+  box-sizing      : border-box;
+  background-color: rgb(233, 233, 233);
+  width           : 100%;
+  height          : 100%;
+  position        : fixed;
+  padding         : 30px 30px;
+  z-index         : 10;
+  top             : 0;
+  left            : 0;
+  text-align      : center;
+}
+
+.prompt {
+  position     : fixed;
+  z-index      : 5000;
+  top          : 50%;
+  left         : 50%;
+  margin-top   : -225px;
+  margin-left  : -425px;
+  width        : 850px;
+  height       : 450px;
+  border-radius: 10px;
+  box-shadow   : 0 2px 4px 0 rgba(0, 0, 0, 0.507), 0 3px 10px 0 rgba(0, 0, 0, 0.589);
+
+}
+
+.promptTitleBar {
+  position               : relative;
+  background-color       : rgb(182, 182, 182);
+  width                  : 100%;
+  height                 : 35px;
+  margin                 : 0 auto;
+  padding-top            : 3px;
+  border-top-left-radius : 10px;
+  border-top-right-radius: 10px;
+  border-top             : 1px solid black;
+  border-right           : 1px solid black;
+  border-left            : 1px solid black;
+  border-bottom          : 1px solid rgb(121, 121, 121);
+}
+
+.promptBody {
+  width                     : 100%;
+  height                    : 415px;
+  background-color          : white;
+  text-align                : center;
+  border-bottom-left-radius : 10px;
+  border-bottom-right-radius: 10px;
+  border-right              : 1px solid black;
+  border-left               : 1px solid black;
+  border-bottom             : 1px solid black;
+  overflow                  : auto;
+}
+
+.promptHeading {
+  padding-top: 50px;
+  font-size  : 55px;
+  color      : rgb(82, 82, 255);
+}
+
+.promptNote {
+  padding-top: 40px;
+}
+
+.surveyCode {
+  padding-top: 40px;
+  color      : rgb(66, 66, 202);
+}
+
+.promptButtons {
+  padding-top: 50px;
+}
+
+.promptButtons button {
+  display: inline-block;
+}
+
+.next:hover,
+.previous:hover {
+  color : blue;
+  cursor: pointer;
+}
+
+.consent {
+  position     : fixed;
+  z-index      : 5000;
+  top          : 50%;
+  left         : 50%;
+  height       : 700px;
+  margin-top   : -350px;
+  width        : 1000px;
+  margin-left  : -500px;
+  border-radius: 10px;
+  box-shadow   : 0 2px 4px 0 rgba(0, 0, 0, 0.507), 0 3px 10px 0 rgba(0, 0, 0, 0.589);
+
+}
+
+.consentBody {
+  padding   : 50px 20px;
+  text-align: left;
+  height    : 665px;
+}
+
+.navigation{
+  padding-top: 10px;
+}
+
+.menu {
+  padding         : 5px 5px;
+  background-color: white;
+  border          : 2px solid black;
+  border-radius   : 5px;
+  text-align      : center;
+  display         : inline-block;
+  margin          : 0px !important;
+}
+
+.menuControls {
+  margin-left   : 10px;
+  margin-right  : 10px;
+  padding-left  : 5px;
+  display       : inline-block;
+  vertical-align: top;
+}
+
+.menuControls * {
+  margin: 0 auto;
+}
+
+.menuControls button {
+  margin: 0 auto;
+  width : 100%;
+}
+
+.descriptionContainer {
+  text-align    : left;
+  display       : inline-block;
+  width         : 600px;
+  vertical-align: top;
+  margin-left   : 10px;
+}
+
+.descriptionTitle {
+  color      : rgb(24, 24, 161);
+  font-weight: bold;
+}
+
+.description {
+  padding-left: 10px;
+  padding-top : 10px;
+  overflow    : auto;
+  height      : 140px;
+  text-align  : justify;
+}
+
+.descriptiveImageContainer {
+  text-align    : left;
+  display       : inline-block;
+  width         : 300px;
+  vertical-align: top;
+  margin-left   : 10px;
+}
+
+.descriptiveImageTitle {
+  color      : rgb(24, 24, 161);
+  font-weight: bold;
+}
+
+.descriptiveImageParent {
+  padding-left: 10px;
+  padding-top : 10px;
+  height      : 140px;
+  text-align  : center;
+}
+
+.descriptiveImage {
+  max-width : 100%;
+  max-height: 100%;
+  border    : 2px solid black;
+  position  : relative;
+}
+
+.ratingContainer {
+  margin-left   : 10px;
+  text-align    : left;
+  display       : inline-block;
+  vertical-align: top;
+}
+
+.ratingQuestion {
+  color      : rgb(24, 24, 161);
+  font-weight: bold;
+}
+
+.ratingOptions {
+  padding-left: 10px;
+  padding-top : 10px;
+  text-align  : left;
+  height      : 140px;
+}
+
+.radio {
+  height        : 20px;
+  width         : 20px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.completed {
+  font-weight: bold;
+  padding-top: 10px;
+  display    : inline-block;
+}
+
+.completedLabel {
+  padding-bottom: 10px;
+  display       : inline-block;
+
+}
+
+.mainFrame {
+  background-color: rgb(210, 210, 210);
+  border          : 1px solid black;
+  border-radius   : 7px;
+  box-shadow      : 0 2px 4px 0 rgba(0, 0, 0, 0.507), 0 3px 10px 0 rgba(0, 0, 0, 0.589);
+  margin          : 0 auto;
+  position        : relative;
+}
+
+.tabsFrame {
+  padding-top     : 0px;
+  padding-bottom  : 0px !important;
+  border-bottom   : 2px solid black;
+  background-color: rgb(210, 210, 210);
+  margin-bottom   : 0px !important;
+  height          : 43px;
+  position        : relative;
+}
+
+#submit:hover,
+#help:hover {
+  cursor: pointer;
+}
+
+.tab {
+  font-size              : 22px;
+  font-weight            : bold;
+  background-color       : white;
+  border                 : 0px;
+  border-top-left-radius : 15px;
+  border-top-right-radius: 15px;
+  min-width              : 80px;
+  margin-bottom          : 0px !important;
+  border-top             : 2px solid rgb(210, 210, 210);
+  border-right           : 2px solid rgb(210, 210, 210);
+  border-left            : 2px solid rgb(210, 210, 210);
+}
+
+.tab:hover {
+  cursor      : pointer;
+  color       : rgb(24, 24, 161) !important;
+  border-top  : 2px solid rgb(24, 24, 161);
+  border-right: 2px solid rgb(24, 24, 161);
+  border-left : 2px solid rgb(24, 24, 161);
+}
+
+.tabActive {
+  font-size    : 24px;
+  border       : 2px solid black;
+  padding-right: 6px;
+  padding-left : 6px;
+  padding-top  : 6px;
+
+  border-bottom: 2px solid white;
+  margin-bottom: -2px !important;
+  color        : rgb(24, 24, 161);
+
+}
+
+.urlFrame {
+  margin          : 0px !important;
+  position        : relative;
+  width           : 100%;
+  height          : 44px;
+  background-color: rgb(210, 210, 210);
+  color           : black
+}
+
+.fa-arrow-alt-circle-left,
+.fa-arrow-alt-circle-right,
+#progress {
+  font-size: 28px;
+}
+
+.titleFrame {
+  background-color: black;
+  color           : white;
+}
+
+.urlBar {
+  background-color: white;
+  border          : 1px solid rgb(0, 0, 0);
+  color           : rgb(0, 0, 0);
+  display         : inline-block;
+  padding         : 1px 10px;
+  text-align      : left;
+  border-radius   : 5px;
+  width           : 60%;
+}
+
+
+.close {
+  display: inline-block;
+}
+
+.close:hover {
+  cursor: pointer;
+}
+
+.dot {
+  height       : 15px;
+  width        : 15px;
+  border-radius: 50%;
+  display      : inline-block;
+}
+
+.contentFrame {
+  text-align      : left !important;
+  overflow        : scroll;
+  max-height      : 500px;
+  min-height      : 500px;
+  background-color: white;
+}
+
+
+
+
+
+.heading {
+  font-size    : 27px;
+  font-weight  : bold;
+  color        : rgb(24, 24, 161);
+  margin-top   : 30px;
+  margin-bottom: 10px;
+}
+
+.question {
+  padding    : 10px;
+  color      : rgb(24, 24, 161);
+  font-size  : 35px;
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+.bottomLeft {
+  text-align  : left;
+  display     : inline-block;
+  margin      : 0px !important;
+  position    : absolute;
+  bottom      : 0;
+  left        : 0;
+  padding-left: 5px;
+}
+
+.topRight {
+  text-align   : right;
+  display      : inline-block;
+  margin       : 0px !important;
+  position     : absolute;
+  top          : 0;
+  right        : 0;
+  padding-right: 8px;
+}
+
+.bottomRight {
+  text-align   : right;
+  display      : inline-block;
+  margin       : 0px !important;
+  position     : absolute;
+  bottom       : 0;
+  right        : 0;
+  padding-right: 8px;
+}
+
+#topButton {
+  visibility: hidden;
+  /* Hidden by default */
+  position  : fixed;
+  /* Fixed/sticky position */
+  bottom    : 20px;
+  /* Place the button at the bottom of the page */
+  right     : 30px;
+  /* Place the button 30px from the right */
+  z-index   : 99;
+  /* Make sure it does not overlap */
+}
+
+/* Dropdown Button */
+select {
+  min-width: 120px;
+  cursor   : pointer;
+  color    : black;
+}
+
+.warning {
+  color         : red;
+  padding-bottom: 20px;
+  display       : none;
+}
+
+.popupInstructions {
+  display: none;
+}
+
+@media only screen and (min-width: 1400px) and (min-height: 780px) {
+  #viewportSize {
+    display: none;
+  }
+}

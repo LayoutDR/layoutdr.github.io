@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet" />
+  <link type="text/css" rel="stylesheet" href="main.css" />
+  <script src="main.js"></script>
+  <!--<script src="json-data.js"></script>-->
+  <script id="delete" src="manual-classifications-csv.js"></script>
+  <script src="scroll-data-new.js"></script>
+  <script src="description-data.js"></script>
+
+
+  <link href="/fontawesome-free-5.15.1-web/css/all.css" rel="stylesheet" />
+  <script defer src="/fontawesome-free-5.15.1-web/js/all.js"></script>
+  <title>Human Study</title>
+</head>
+
+<body>
+
+  <div id="topPageFrame" class="topPageFrame">
+    <div id="menu" class="menu">
+
+      <div class="descriptionContainer">
+        <div class="descriptionTitle">Description of webpage layout bug:</div>
+        <div id="description" class="description">ERROR:- no description is available. Please report this to
+          problem@layoutdr.com. Thanks.</div>
+      </div>
+      <!--
+      <div class="descriptiveImageContainer">
+        <div class="descriptiveImageTitle">Image of issue:</div>
+        <div class="descriptiveImageParent">
+          <img class="descriptiveImage" src="issue-image/test.png">  
+        </div>
+      </div>
+    -->
+
+      <div class="ratingContainer">
+        <div id="ratingQuestion" class="ratingQuestion">?</div>
+        <div id="ratingOptions" class="ratingOptions">
+          <div>
+            <input id="radioF" type="radio" class="radio" id="F" name="rate" value="F" onclick="rate(this)">
+            <label for="F">Containing Bug.</label>
+          </div>
+          <div>
+            <input id="radioA" type="radio" class="radio" id="A" name="rate" value="A" onclick="rate(this)">
+            <label for="A">Repair A.</label>
+          </div>
+          <div>
+            <input id="radioB" type="radio" class="radio" id="B" name="rate" value="B" onclick="rate(this)">
+            <label for="B">Repair B.</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="menuControls">
+        <div>
+          <button id="help" onclick="help()">Instructions</button>
+        </div>
+        <div>
+          <div id="completed" class="completed">?%</div>
+          <div class="completedLabel">Completed</div>
+        </div>
+        <button id="submit" onclick="submit()">Submit</button>
+
+        <div id="navigation" class="navigation" style="bottom: 4px; right: 4px;">
+          <i id="previous" class="previous far fa-arrow-alt-circle-left" onclick="previous()"></i>
+          </i><span id="progress" class="progress">?</span>
+          <i id="next" class="next far fa-arrow-alt-circle-right" onclick="next()"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div id="bottomPageFrame" class="bottomPageFrame">
+    <div class="browserContainer">
+      <div id="mainFrame" class="mainFrame">
+        <div class="titleFrame">
+          <div class="titleBar">Browser</div>
+
+          <div class="topRight">
+            <span class="dot" style="background-color: rgb(34, 146, 103);"></span>
+            <span class="dot" style="background-color: rgb(146, 129, 34);"></span>
+            <span class="dot" style="background-color: rgb(146, 34, 34);"></span>
+          </div>
+        </div>
+
+        <div id="tabsFrame" class="tabsFrame">
+          <div class="bottomLeft">
+            <button id="tabF" type="button" class="tab" onclick="tabClick('F',true)">Containing Bug</button>
+            <button id="tabA" type="button" class="tab" onclick="tabClick('A',true)">Repair A</button>
+            <button id="tabB" type="button" class="tab" onclick="tabClick('B',true)">Repair B</button>
+          </div>
+        </div>
+
+
+
+        <div id="contentFrame" class="contentFrame">
+          <img id="snapshotF" alt="Loading..." />
+          <img id="snapshotA" alt="Loading..." />
+          <img id="snapshotB" alt="Loading..." />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="popupPrompt" class="popup">
+    <div id="prompt" class="prompt">
+      <div id="promptTitleBarFrame" class="promptTitleBar">
+        <div id="promptTitleBar"></div>
+        <div class="topRight" onclick="promptResponse(false)" style="cursor: pointer;">
+          <span class="dot" style="background-color: rgb(34, 146, 103);"></span>
+          <span class="dot" style="background-color: rgb(146, 129, 34);"></span>
+          <span class="dot" style="background-color: rgb(146, 34, 34);"></span>
+        </div>
+      </div>
+      <div id="promptBody" class="promptBody">
+        <div id="promptHeading" class="promptHeading"></div>
+        <div id="promptNote" class="promptNote"></div>
+        <div id="surveyCode" class="surveyCode"></div>
+        <div id="promptButtons" class="promptButtons">
+          <button id="help" class="promptButton" onclick="promptResponse(false)"> Cancel </button>
+          <div style="width: 100px; display: inline-block;"></div>
+          <button id="submit" class="promptButton" onclick="promptResponse(true)"> Submit </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="popupInstructions" class="popup">
+    <div id="instructions" class="consent">
+      <div id="instructionsTitleBarFrame" class="promptTitleBar">
+        <div id="instructionsTitleBar">Instructions</div>
+        <div class="topRight" onclick="closeHelp()" style="cursor: pointer;">
+          <span class="dot" style="background-color: rgb(34, 146, 103);"></span>
+          <span class="dot" style="background-color: rgb(146, 129, 34);"></span>
+          <span class="dot" style="background-color: rgb(146, 34, 34);"></span>
+        </div>
+      </div>
+      <div id="instructionsBody" class="promptBody consentBody">
+        <div class="question center" style="padding-bottom: 20px;">
+          Which webpage layout do you prefer?
+        </div>
+        <div class="center">
+          <img src="help.gif" alt="Instructions GIF" style="max-width: 700px; border: 4px solid black" />
+          <div></div>
+        </div>
+
+
+
+        <div class="heading">Instructions:</div>
+        <ol>
+          <li>Read the description of the layout bug.</li>
+          <li>Alternate between the tabs <em>Containing Bug</em>, <em>Repair A</em> and <em>Repair B</em> to compare the three webpage layouts to each other.</li>
+          <li>Choose your preferred layout <em>Containing Bug</em>, <em>Repair A</em>, or <em>Repair B</em>.</li>
+          <li>Proceed to the next section by clicking on the right direction arrow.</li>
+          <li>Once finished click the submit button.</li>
+        </ol>
+
+        <div class="heading">Note:</div>
+        <span>
+          <ul>
+            <li> Auto scrolling is used to reach the area you are expected to inspect. </li>
+            <li> You may also scroll to view other portions of the webpage layout.</li>
+            <li> If you need these instructions again click on the Instructions button.</li>
+            <li> To report an issue please email <a href="mailto:problem@layoutdr.com">problem@layoutdr.com</a>. </li>
+          </ul>
+        </span>
+        <div class="center">
+          <button id="agree" onclick="closeHelp()"> OK </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="popupConsent" class="popup">
+    <div id="consent" class="consent">
+      <div id="consentTitleBarFrame" class="promptTitleBar">
+        <div id="consentTitleBar">Information and Consent</div>
+        <div class="topRight">
+          <span class="dot" style="background-color: rgb(34, 146, 103);"></span>
+          <span class="dot" style="background-color: rgb(146, 129, 34);"></span>
+          <span class="dot" style="background-color: rgb(146, 34, 34);"></span>
+        </div>
+      </div>
+      <div id="consentBody" class="promptBody consentBody">
+        <div style="text-align: center; padding-top: 30px">
+          <img src="university-logo.jpg" alt="University of Sheffield Logo" style="max-width: 300px" />
+        </div>
+        <h2 class="center">Human Study</h2>
+        <h1 class="center">Your Preferred Webpage Layout</h1>
+        <h2 style="color: rgb(24, 24, 161); text-decoration: underline">
+          Project Information:
+        </h2>
+
+        <h3 style="color: rgb(24, 24, 161)">About the survey:</h3>
+        <p>
+          This survey will ask you to inspect three webpage layouts (images showing relevant portion of a
+          webpage's layout). The first webpage layout is one that has a layout bug in the webpage. For
+          example, a layout bug could be that some content of the page is partially or fully hidden from view. The webpage
+          layout with the bug will be labelled <em>Containing Bug</em>. The second two layouts are of the same webpage but with
+          the bug repaired and will be labelled as <em>Repair A</em> and <em>Repair B</em>. After inspecting all three
+          webpage layouts, you must choose your preferred layout by choosing either the webpage containing the bug or one of the repaired
+          webpage layouts. There is a total of ten sections with ten total questions containing three layouts each. In each section,
+          you must read the short text-based description of the layout bug and identify it in the webpage before choosing your
+          preferred webpage layout.
+        </p>
+        <p>Please note:</p>
+        <ul>
+          <li>Only one participation is allowed per person.</li>
+          <li>The duration of the study is expected to take about 10 to 15 minutes.</li>
+          <li>The webpages in the snapshots are related to software and
+            will not contain explicit or distressing images.</li>
+          <li>You can withdraw from the study at any time before clicking on the final
+            submit button.</li>
+        </ul>
+
+        <h3 style="color: rgb(24, 24, 161)">What information is collected:</h3>
+        <p>
+          For the purpose of research and thereafter publication, we collect the
+          following data points.
+        </p>
+        <ul>
+          <li>
+            Your preference of layouts.
+          </li>
+          <li>Non-personal data points reflecting your specific session.</li>
+          <ul>
+            <li>
+              An example is the total time spent in the study.
+            </li>
+          </ul>
+        </ul>
+        <h3 style="color: rgb(24, 24, 161)">Questions:</h3>
+        <p>
+          If you have any questions, please send an email to
+          questions@layoutdr.com.
+        </p>
+        <h2 style="color: rgb(24, 24, 161); text-decoration: underline">
+          Your Consent:
+        </h2>
+        <h3 style="color: rgb(24, 24, 161)">Taking part in the project:</h3>
+        <p>By continuing you agree with the following:</p>
+        <ol>
+          <li>
+            I find the above description in the project information section
+            satisfactory.
+          </li>
+          <li>
+            I have been given the opportunity to ask questions about the
+            project.
+          </li>
+          <li>I agree to take part in the project.</li>
+          <li>
+            I understand that taking part in the project will include rating or ranking each snapshot.
+          </li>
+          <li>
+            I understand that by choosing to participate as a volunteer in this
+            research, this does not create a legally binding agreement nor is it
+            intended to create an employment relationship with the University of
+            Sheffield.
+          </li>
+          <li>
+            I understand that my taking part is voluntary and that I can
+            withdraw from the study at any before clicking on the final submit
+            button; I do not have to give any reasons for why I no longer want
+            to take part and there will be no adverse consequences if I choose
+            to withdraw.
+          </li>
+        </ol>
+        <h3 style="color: rgb(24, 24, 161)">
+          How my information will be used during and after the project:
+        </h3>
+        <p>By continuing you understand and agree with the following:</p>
+        <ol>
+          <li>
+            I understand my personal details will not be revealed to people outside the
+            project.
+          </li>
+          <li>
+            I understand and agree that my input will be used in publications,
+            reports, repositories, web pages, and other research outputs. I
+            understand that I will not be named in these outputs.
+          </li>
+          <li>
+            I understand and agree that other researchers will have access to
+            the anonymous data.
+          </li>
+          <li>
+            I understand and agree that other researchers may use the anonymous
+            data in publications, reports, web pages, and other research
+            outputs.
+          </li>
+          <li>
+            I agree to assign the copyright I hold in any materials generated as
+            part of this project to The University of Sheffield.
+          </li>
+        </ol>
+        <h3 style="color: rgb(24, 24, 161)">
+          So that the information you provide can be used legally by the
+          researchers:
+        </h3>
+        <p>
+          I agree to assign the copyright I hold in any materials generated as
+          part of this project to The University of Sheffield.
+        </p>
+        <div>
+          <div class="center">
+            <label for="workerid">WorkerID:</label>
+            <input type="text" id="workerid" />
+          </div>
+          <br />
+          <div class="center">
+            <div id="warning" class="warning">Please enter your MTurk WorkerID</div>
+            <button id="agree" onclick="agree()"> I Agree </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="viewportSize" class="popup" style="text-align: left;">
+    <div class="popup-content">
+      <h3 style="color: rgb(24, 24, 161)">
+        Please maximize the browser or use
+      another device with a larger screen size.
+      </h3>
+      <br />
+      <br />
+      The browser size is important for this study and the size of this
+      browser window on your device does not meet the minimum requirement of
+      at least 1400 pixels wide and 780px high. <br />
+      <br />
+      Most desktops and laptops meet the criteria. <br />
+      <br />
+      
+    </div>
+  </div>
+
+  <div id="loading" class="loading">Loading...</div>
+
+
+  <div id="topButton">
+    <i class="unselectedIcon far fa-arrow-alt-circle-up fa-4x" onclick="topFunction()"></i>
+  </div>
+
+</body>
+
+</html>
