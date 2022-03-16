@@ -1,0 +1,7 @@
+Webpage,Run,ID,Type,RangeMin,RangeMax,RealName,ImageName
+HotelWifiTest-index-html,1,1,Viewport-Protrusion,415,766,Failure-415,1-415-F
+HotelWifiTest-index-html,1,1,Viewport-Protrusion,415,766,Failure-766,1-766-F
+HotelWifiTest-index-html,1,1,Viewport-Protrusion,415,766,Transform-Wider-415,1-415-W
+HotelWifiTest-index-html,1,1,Viewport-Protrusion,415,766,Transform-Wider-766,1-766-W
+HotelWifiTest-index-html,1,1,Viewport-Protrusion,415,766,Transform-Narrower-415,1-415-N
+HotelWifiTest-index-html,1,1,Viewport-Protrusion,415,766,Transform-Narrower-766,1-766-N

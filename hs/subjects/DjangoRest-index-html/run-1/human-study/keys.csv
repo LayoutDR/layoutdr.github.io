@@ -1,0 +1,13 @@
+Webpage,Run,ID,Type,RangeMin,RangeMax,RealName,ImageName
+DjangoRest-index-html,1,1,Wrapping,768,859,Failure-768,1-768-F
+DjangoRest-index-html,1,1,Wrapping,768,859,Failure-859,1-859-F
+DjangoRest-index-html,1,1,Wrapping,768,859,Transform-Wider-768,1-768-W
+DjangoRest-index-html,1,1,Wrapping,768,859,Transform-Wider-859,1-859-W
+DjangoRest-index-html,1,1,Wrapping,768,859,Transform-Narrower-768,1-768-N
+DjangoRest-index-html,1,1,Wrapping,768,859,Transform-Narrower-859,1-859-N
+DjangoRest-index-html,1,2,Viewport-Protrusion,767,767,Failure-767,2-767-F
+DjangoRest-index-html,1,2,Viewport-Protrusion,767,767,Failure-767,2-767-F
+DjangoRest-index-html,1,2,Viewport-Protrusion,767,767,Transform-Wider-767,2-767-W
+DjangoRest-index-html,1,2,Viewport-Protrusion,767,767,Transform-Wider-767,2-767-W
+DjangoRest-index-html,1,2,Viewport-Protrusion,767,767,Transform-Narrower-767,2-767-N
+DjangoRest-index-html,1,2,Viewport-Protrusion,767,767,Transform-Narrower-767,2-767-N
